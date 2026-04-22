@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="ec5b8bc8-8916-49f1-b2f1-d4e6c95c7997" version="1">
+    <Properties>
+        <Name>Recruit Great People for Era.</Name>
+        <Description>Automatically recruits all remaining Great People at the end of the Era before they become unobtainable.</Description>
+        <Teaser>Auto-Recruit All Era Great People</Teaser>
+        <Authors>satoon101</Authors>
+        <CompatibleVersions>2.0</CompatibleVersions>
+    </Properties>
+
+    <InGameActions>
+
+        <AddUserInterfaces id="RecruitGreatPeopleUI">
+            <Properties>
+                <Context>InGame</Context>
+            </Properties>
+            <File>scripts/UI/GreatPeople_Interface.xml</File>
+        </AddUserInterfaces>
+
+        <AddGameplayScripts id="RecruitGreatPeopleScript">
+            <File>scripts/Gameplay/RecruitGreatPeople.lua</File>
+        </AddGameplayScripts>
+
+    </InGameActions>
+
+    <Files>
+        <File>scripts/Gameplay/RecruitGreatPeople.lua</File>
+        <File>scripts/UI/GreatPeople_Interface.lua</File>
+        <File>scripts/UI/GreatPeople_Interface.xml</File>
+    </Files>
+</Mod>
