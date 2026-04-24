@@ -120,11 +120,11 @@ function OnPlayerTurnActivated(playerID)
     FindRecruits(playerID)
 end
 
-Events.PlayerTurnActivated.Add(OnPlayerTurnActivated);
+Events.PlayerTurnActivated.Add(OnPlayerTurnActivated)
 
 function OnPlayerTurnDeactivated()
     g_AutoRecruitingInProgress = false
 end
-Events.PlayerTurnDeactivated.Add(OnPlayerTurnDeactivated);
+Events.PlayerTurnDeactivated.Add(OnPlayerTurnDeactivated)
 
 print("=== Recruit Great People (Gameplay) Loaded ===")
