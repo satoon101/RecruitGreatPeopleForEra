@@ -37,7 +37,7 @@ function CanRecruitPerson(person, era, numPastRecruits, goldNeeded)
         return false
     end
 
-    if person.Era ~= era then
+    if person.Era > era then
         return false
     end
 
@@ -106,13 +106,13 @@ end
 Events.UnitGreatPersonCreated.Add(UnitGreatPersonCreated)
 
 function OnPlayerTurnActivated(playerID)
-    local isLastEraTurn = ExposedMembers.CustomGPRecruitment.IsLastTurnForEra()
-    if not isLastEraTurn then
+    local player = Players[playerID]
+    if not player:IsHuman() then
         return
     end
 
-    local player = Players[playerID]
-    if not player:IsHuman() then
+    local isLastEraTurn = ExposedMembers.CustomGPRecruitment.IsLastTurnForEra()
+    if not isLastEraTurn then
         return
     end
 

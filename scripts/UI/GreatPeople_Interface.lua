@@ -8,7 +8,6 @@ print("=== Recruit Great People (GreatPeople) Loading ===")
 ExposedMembers.CustomGPRecruitment = ExposedMembers.CustomGPRecruitment or {}
 
 function IsLastTurnForEra()
-    -- Might need to be 1 instead of 0, needs tested
     return Game.GetEras():GetNextEraCountdown() == 0
 end
 
