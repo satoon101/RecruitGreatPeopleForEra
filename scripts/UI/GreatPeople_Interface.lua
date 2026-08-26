@@ -11,8 +11,6 @@ function IsLastTurnForEra()
     return Game.GetEras():GetNextEraCountdown() == 0
 end
 
-ExposedMembers.CustomGPRecruitment.IsLastTurnForEra = IsLastTurnForEra
-
 function GetPastRecruitsForEra(era)
     local data = {}
     for _, person in ipairs(Game.GetGreatPeople():GetPastTimeline()) do
@@ -26,8 +24,6 @@ function GetPastRecruitsForEra(era)
     return data
 end
 
-ExposedMembers.CustomGPRecruitment.GetPastRecruitsForEra = GetPastRecruitsForEra
-
 function RecruitGreatPerson(playerID, personID)
     local params = {}
     params[PlayerOperations.PARAM_GREAT_PERSON_INDIVIDUAL_TYPE] = personID
@@ -35,6 +31,13 @@ function RecruitGreatPerson(playerID, personID)
     UI.RequestPlayerOperation(playerID, PlayerOperations.PATRONIZE_GREAT_PERSON, params)
 end
 
+
+-- ===========================================================================
+--  Expose the functions to the Gameplay layer
+-- ===========================================================================
+
+ExposedMembers.CustomGPRecruitment.GetPastRecruitsForEra = GetPastRecruitsForEra
+ExposedMembers.CustomGPRecruitment.IsLastTurnForEra = IsLastTurnForEra
 ExposedMembers.CustomGPRecruitment.RecruitGreatPerson = RecruitGreatPerson
 
 print("=== Recruit Great People (GreatPeople) Loaded ===")

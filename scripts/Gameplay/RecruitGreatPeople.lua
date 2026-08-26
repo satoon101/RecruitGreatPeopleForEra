@@ -51,7 +51,9 @@ end
 function FindRecruits(playerID, classID, individualID)
     local player = Players[playerID]
     local era = Game.GetEras():GetCurrentEra()
-    local pastRecruits = ExposedMembers.CustomGPRecruitment.GetPastRecruitsForEra(era)
+    local pastRecruits = ExposedMembers.CustomGPRecruitment.GetPastRecruitsForEra(
+        era
+    )
     if classID ~= nil then
         if pastRecruits[classID] == nil then
             pastRecruits[classID] = {}
@@ -87,8 +89,8 @@ function FindRecruits(playerID, classID, individualID)
                 local currentGold = pTreasury:GetGoldBalance()
                 pTreasury:SetGoldBalance(currentGold + goldNeeded)
                 ExposedMembers.CustomGPRecruitment.RecruitGreatPerson(
-                        playerID,
-                        person.Individual
+                    playerID,
+                    person.Individual
                 )
             end
         end
